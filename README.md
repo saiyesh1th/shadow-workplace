@@ -12,10 +12,10 @@ The system is built on the **Supervisor-Worker** pattern using **LangGraph**. A 
 
 ```mermaid
 graph TD
-    User(User "Alex") -->|1. Selects Job| Manager(Product Owner Agent)
+    User[User: Alex] -->|1. Selects Job| Manager[Product Owner Agent]
     Manager -->|2. Generates Specs| State[Shared State]
-    State -->|3. Trigger| GitOps(GitOps Agent)
-    GitOps -->|4. Creates Repo & Issues| GitHub[User's GitHub]
-    User -->|5. Pushes Code/PR| GitHub
-    GitHub -->|6. Webhook| Senior(Senior Engineer Agent)
+    State -->|3. Trigger| GitOps[GitOps Agent]
+    GitOps -->|4. Creates Repo & Issues| GitHub[User GitHub]
+    User -->|5. Pushes Code or PR| GitHub
+    GitHub -->|6. Webhook| Senior[Senior Engineer Agent]
     Senior -->|7. Strict Review| GitHub
